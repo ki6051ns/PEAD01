@@ -21,3 +21,9 @@ $env:PYTHONPATH = "src"
 イベント表・観測リターン・カバレッジ・グループ統計は `data/phase1/` の Parquet、レポートは [基礎結果](reports/phase1_baseline.md)、図表は [figures/](figures/) に出力する。入力・イベント単位の出力・認証情報はローカルで管理する。
 
 [データ取得可能性](docs/phase1_data_sources.md) · [方法と品質検証](docs/phase1_methodology.md)
+
+## Phase 2
+
+Phase 1の保存済み出力と生データを使用する。PowerShellで `$env:PYTHONPATH = "src"` を設定し、`.venv/Scripts/python -m pead01.phase2` を実行する。イベント別パネル・比較統計は `data/phase2/` に保存する。
+
+[結果](reports/phase2_findings.md) · [ファクター分解](reports/phase2_factor_decomposition.md) · [方法](docs/phase2_methodology.md)

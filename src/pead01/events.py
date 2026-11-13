@@ -15,7 +15,7 @@ FIN_COLUMNS = [
 ]
 
 
-def build_events(fin):
+def build_events(fin, include_revision_prior=False):
     fin = fin[FIN_COLUMNS].drop_duplicates().copy()
     if fin.duplicated(["Code", "DiscNo"]).any() or fin.DiscNo.isna().any():
         raise ValueError("Missing or conflicting disclosure identifier")
@@ -83,6 +83,8 @@ def build_events(fin):
                     event[f"company_surprise_{suffix}"] = difference(getattr(row, metric), prior)
                 revision_date, revision_prior = forecasts.get(new_target, {}).get("OP", (pd.NaT, np.nan))
                 event["revision_prior_date"] = revision_date
+                if include_revision_prior:
+                    event["revision_prior_op"] = revision_prior
                 event["forecast_revision"] = difference(event["forecast_operating_profit"], revision_prior)
                 rows.append(event)
                 seen.add(period_key)
