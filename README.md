@@ -27,3 +27,11 @@ $env:PYTHONPATH = "src"
 Phase 1の保存済み出力と生データを使用する。PowerShellで `$env:PYTHONPATH = "src"` を設定し、`.venv/Scripts/python -m pead01.phase2` を実行する。イベント別パネル・比較統計は `data/phase2/` に保存する。
 
 [結果](reports/phase2_findings.md) · [ファクター分解](reports/phase2_factor_decomposition.md) · [方法](docs/phase2_methodology.md)
+
+## Phase 3
+
+同じPowerShell環境で `.venv/Scripts/python -m pead01.phase3` を実行する。入力はPhase 2のローカルParquetと同じ生データ。全シグナル、日次損益、約定台帳、OOS集計は `data/phase3/` に保存する。
+
+入力が同じ場合は `--reuse-signals` で保存済みシグナルから再計算できる。集計結果を使ったレポートの再生成は `--reports-only`。
+
+[結果](reports/phase3_findings.md) · [執行](reports/phase3_execution.md) · [ポートフォリオ](reports/phase3_portfolio.md) · [OOS](reports/phase3_oos.md) · [方法](docs/phase3_methodology.md)
