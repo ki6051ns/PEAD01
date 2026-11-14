@@ -1,47 +1,47 @@
-# PEAD01
+# PEAD01｜日本株・決算発表後ドリフト戦略の研究
 
-**Post-Earnings Announcement Drift Research for Japanese Equities**
+**PEAD（Post-Earnings Announcement Drift：決算発表後ドリフト）**を対象に、日本株の決算発表後の価格形成を研究するプロジェクトです。
 
-日本株の決算発表後の価格形成を対象に、経済的仮説に基づく売買ルール、パラメータ最適化、アンサンブル、資金配分と信用コストを研究するプロジェクトです。
+決算情報が株価へ段階的に織り込まれるという経済的仮説を起点に、売買ルールの構築、高次元パラメータ探索、アンサンブル、信用取引を含む資金配分を検証します。
 
-## Research status (2026-11-14)
+## 研究状況（2026年11月14日時点）
 
-**Phase 1–6.1 completed as exploratory research.** Results below are historical simulations, **not live trading performance**. The tested walk-forward (WF) periods overlap periods previously inspected during research; they are **not independent, untouched out-of-sample (OOS) evidence**.
+**Phase 1〜6.1の探索研究を完了しました。** 以下は過去データに基づくシミュレーションであり、実運用実績ではありません。研究過程で既に参照した期間のウォークフォワード（WF）成績を含むため、**未観測の独立OOS（Out-of-Sample）成績ではありません**。
 
-| Stage | Main result |
+| フェーズ | 主な結果 |
 | --- | --- |
-| Phase 1–2 | Approximately 75,369 earnings events; initial price response and subsequent relative returns were examined |
-| Phase 3 | Simple 20-trading-day long: annual return **6.16%**, Sharpe **0.62**, maximum drawdown **−17.70%** (1,221 trading days) |
-| Phase 4–5 | Intraday price response and execution-delay sensitivity examined; short-horizon opportunities were small and cost sensitive |
-| Phase 6 | 14,909 preliminary candidates; 20 constrained re-evaluations; best selected single-strategy WF Sharpe **2.07**, annual return **1.93%** |
-| Phase 6.1 | 903 sizing / leverage cases completed; selected single-strategy cost-adjusted WF Sharpe **2.02**, annual return **1.88%**; selected shrinkage composite WF Sharpe **1.58**, annual return **2.28%** |
+| Phase 1〜2 | 約75,369件の決算イベントから、決算直後の初動と、その後の相対リターンの関係を検証 |
+| Phase 3 | 単純な20営業日ロング：年率収益 **6.16%**、Sharpe **0.62**、最大DD **−17.70%**（1,221営業日） |
+| Phase 4〜5 | 分足で初動と約定タイミングを分析。短期の収益機会は小さく、コスト・エントリー遅延の影響が大きい |
+| Phase 6 | 14,909候補の一次探索、上位20件の制約付き再評価。SingleのWF Sharpe **2.07**、年率収益 **1.93%** |
+| Phase 6.1 | 資金配分・信用倍率の903ケースを評価。選択型WFのSingleは費用控除後Sharpe **2.02**、年率 **1.88%**。複合ShrinkはSharpe **1.58**、年率 **2.28%** |
 
-The high-Sharpe candidates were characterized by **very low capital utilization** (approximately 1.6–2.6% on the selected WF results). Some **retrospectively evaluated fixed-grid** sizing cases achieved Sharpe above 2 and annual return above 5%, but these **must not be presented as selection-valid WF or independent OOS results**.
+高Sharpe候補の平均資金稼働率は約1.6〜2.6%と低く、絶対収益の拡大が課題です。既観測期間の**固定グリッド事後評価**ではSharpe 2超・年率5%超の候補もありましたが、これは学習期間だけで選択したWFや独立OOSの結果とは区別しています。
 
-## Research methodology
+詳しい結果と限界は[Phase 1〜6.1研究総括](research/phase1_to_phase61_summary.md)を参照してください。
 
-1. **Economic rationale** — delayed incorporation of post-earnings information into prices, momentum and reversal.
-2. **Executable strategy rules** — entry timestamp, holding horizon, liquidity and event filters, with conservative transaction costs.
-3. **Parameter exploration** — candidate-grid screening, neighboring-parameter ensembles, Top-K, covariance-shrinkage, dynamic allocation.
-4. **Capital and risk constraints** — portfolio-level cash usage, position sizing, margin financing, turnover and drawdown.
-5. **Validation** — chronological walk-forward tests, explicit selection-bias disclosures and future untouched OOS testing.
+## 研究の進め方
 
-See [research/phase1_to_phase61_summary.md](research/phase1_to_phase61_summary.md) for results and limitations.
+1. **経済的根拠**：決算情報の段階的な株価反映、初動後のモメンタム・リバーサルを仮説化
+2. **売買ルール**：シグナル観測時刻と発注可能時刻を区別し、保有期間、流動性、費用を設定
+3. **最適化**：グリッド探索、近傍パラメータ、Top-K、共分散縮小、動的アンサンブル
+4. **資金・リスク管理**：銘柄別配分、最大建玉、信用コスト、回転率、最大ドローダウン
+5. **検証**：時系列WF、選択バイアスの明示、今後の未観測OOS検証
 
-## Reproducibility and disclosure
+## 再現性と公開方針
 
-- Avoid using information before it was publicly and operationally available.
-- Distinguish **in-sample (IS)**, **historical walk-forward (WF)**, **retrospectively selected fixed-grid**, **independent OOS**, and **live** results.
-- Report capital utilization, transaction counts, costs, and drawdowns alongside Sharpe ratios.
-- No brokerage credentials, private research datasets, personally identifiable information, or company-confidential material should be committed.
-- Raw J-Quants or other licensed data should not be redistributed without permission.
+- 公表・利用可能時刻より前の情報を売買判断に使わない。
+- **IS（学習期間内）／既観測WF／固定グリッド事後評価／独立OOS／実運用**を明確に区別する。
+- Sharpeだけでなく、年率収益、最大DD、資金稼働率、約定件数、コストも併記する。
+- APIキー、個人情報、勤務先の非公開情報、認証情報を公開しない。
+- J-Quantsなどの利用許諾が必要な生データを無断で再配布しない。
 
-## Code status
+## ソースコードの同期状況
 
-The full local Codex implementation, including the reported local commit `20e7a27`, **has not yet been synchronized to this GitHub repository**. This initial public repository contains documentation only. Do not interpret the published text as independently reproduced source-code results.
+ローカルCodexで実装されたコード（報告されたコミット `20e7a27` を含む）は、**このGitHubリポジトリへの同期をまだ確認できていません**。現時点で確認できる公開資料は研究文書です。ソースコードによる独立再現性を証明したものではありません。
 
-The next steps are a careful local-file review and Git push of publishable code, followed by execution-capacity testing and independent OOS validation.
+ローカルのGit履歴・機密情報を確認したうえでコードを同期し、信用取引の実行条件・約定容量・未観測OOSを検証する予定です。
 
-## Scope
+## 注意
 
-Research and simulation only. Not investment advice or evidence of realized investment returns.
+本プロジェクトは調査研究・過去シミュレーションです。投資助言や将来収益の保証を目的とするものではありません。
