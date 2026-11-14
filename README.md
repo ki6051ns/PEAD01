@@ -35,3 +35,16 @@ Phase 1の保存済み出力と生データを使用する。PowerShellで `$env
 入力が同じ場合は `--reuse-signals` で保存済みシグナルから再計算できる。集計結果を使ったレポートの再生成は `--reports-only`。
 
 [結果](reports/phase3_findings.md) · [執行](reports/phase3_execution.md) · [ポートフォリオ](reports/phase3_portfolio.md) · [OOS](reports/phase3_oos.md) · [方法](docs/phase3_methodology.md)
+
+## Phase 6 ローカルバッチ
+
+```powershell
+$env:PYTHONPATH = "src"
+$env:OPENBLAS_NUM_THREADS = "1"
+.venv/Scripts/python -m pead01.phase6 --mode report --adopt-existing --resume
+.\scripts\Start-Phase6.ps1 -Workers 8 -MemoryMiB 4096
+```
+
+最初のコマンドは保存済み計算を取り込み、レポートだけを作る。ランチャーはWindowsの独立プロセスで再開する。個別段階は `--mode paths|search|ensemble|walkforward|report`。C/Dのチェックポイントは段階単位、探索は方式・保有期間単位。
+
+停止は `New-Item data/phase6_v6/phase6.pause -ItemType File -Force`。停止を確認後に `Remove-Item -LiteralPath data/phase6_v6/phase6.pause` を実行して再起動する。進捗は `data/phase6_v6/phase6_progress.json`、詳細は同ディレクトリの `logs/`。メモリ設定は探索並列数を抑える目安で、OSによる強制上限は設定しない。[計算方法](docs/phase6_methodology.md)
