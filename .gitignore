@@ -38,3 +38,11 @@ Thumbs.db
 Desktop.ini
 .vscode/
 .idea/
+
+# Additional local outputs
+*.npy
+*.npz
+*.log
+!/data/
+/data/*
+!/data/.gitkeep
