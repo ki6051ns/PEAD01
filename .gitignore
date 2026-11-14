@@ -1,0 +1,40 @@
+# Local data, caches, experiment outputs
+data/
+logs/
+cache/
+checkpoints/
+outputs/
+artifacts/
+*.parquet
+*.arrow
+*.feather
+*.pkl
+*.pickle
+*.sqlite
+*.db
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*.json
+*secrets*.json
+*.token
+
+# Python and notebooks
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Windows and IDE
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
