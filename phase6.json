@@ -1,0 +1,14 @@
+{
+  "daily_holds": [1, 2, 3, 5, 10, 15, 20, 30, 40, 60, 90, 120],
+  "minute_holds": [5, 15, 30, 60, 120],
+  "strength": [0, 0.01, 0.03, 0.07],
+  "adv": [0, 100000000, 1000000000],
+  "top_k": [3, 5, 10, 20, 50],
+  "windows": [126, 252, 504, 0],
+  "updates": ["W-FRI", "M", "Q"],
+  "minimum_fills": 40,
+  "capital": 100000000,
+  "position_limit": 1000000,
+  "participation": 0.01,
+  "research_end": "2026-11-13"
+}
