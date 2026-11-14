@@ -1,119 +1,132 @@
-# PEAD01 — Phase 1–6.1 research summary
+# PEAD01｜Phase 1〜6.1 研究総括
 
-**As of 2026-11-14**  
-**Status:** exploratory backtest and historical walk-forward research. Independent OOS and live performance: **not available**.
+**基準日：2026年11月14日**  
+**研究段階：** 探索的バックテストおよび既観測期間のウォークフォワード（WF）検証。**独立した未観測OOS・実運用成績は未取得**。
 
-## Economic hypothesis
+## 1. 経済的仮説
 
-Financial results and corporate guidance are not necessarily incorporated into Japanese equity prices instantaneously. An initial price response following an earnings announcement may be followed by delayed drift or partial reversal. The project tests whether conditional entry rules and holding periods can capture that effect after realistic cost and capital constraints.
+企業の決算や業績見通しは、発表直後にすべてが株価へ織り込まれるとは限りません。決算直後の初動に続くドリフト（価格の継続）や反転が生じる可能性があります。
 
-## Phases and key observations
+本研究では、決算発表後の初動、売買タイミング、保有期間を条件付けし、取引費用と資金制約を考慮したうえで継続的な収益機会が存在するかを検証しています。
 
-### Phase 1 — Earnings-event baseline
-- Approximately **75,369** baseline earnings events from November 2021 to November 2026.
-- Investigated initial response, guidance revisions and post-event returns.
-- The full population did not exhibit a uniformly attractive positive drift; conditioning matters.
+## 2. フェーズ別の検証
 
-### Phase 2 — Matched-event comparisons
-- Matched by announcement date, industry, capitalization and liquidity.
-- Negative first-response group showed roughly **−0.39%** five-day relative return; positive first-response group roughly **+0.21%** under the research definitions.
-- Corporate guidance revision alone did not establish a strong independent predictive effect after controls.
-- Signal availability and entry timestamps must be kept separate: the initial response is not known at the earlier opening price.
+### Phase 1｜決算イベントの基礎分析
 
-### Phase 3 — Executable daily strategy
-- Long, short and long-short variants incorporated subsequent executable entry, transaction costs and portfolio capital limits.
-- Recomputed fixed-entry reference (1,221 trading days):
+- 2021年11月〜2026年11月の決算イベント約**75,369件**を分析。
+- 決算直後の価格反応、業績見通しの変更、発表後のリターンの関係を検証。
+- 決算イベント全体に一様な強い上昇ドリフトが存在するわけではなく、条件付けの必要性を確認。
 
-| Hold | Trades | Annual return | Sharpe | Maximum drawdown |
+### Phase 2｜比較対象を調整したイベント分析
+
+- 発表日、業種、時価総額、流動性などを考慮した比較。
+- 研究上の定義では、初動下落群の5日後相対リターンは約**−0.39%**、初動上昇群は約**+0.21%**。
+- 業績予想の修正だけでは、調整後の独立した予測力を強く確認できなかった。
+- シグナルが判明する時刻と、実際に発注可能な時刻の区別が重要。初動を確認する前の始値で約定したと仮定しない。
+
+### Phase 3｜日足の実行可能性を考慮した戦略
+
+ロング、ショート、ロング・ショートを比較。シグナル確認後のエントリー、売買費用、ポートフォリオ資金制約を反映。
+
+固定条件の再計算（**1,221営業日**）：
+
+| 保有期間 | 約定件数 | 年率収益 | Sharpe | 最大DD |
 | --- | ---: | ---: | ---: | ---: |
-| 3 trading days | 12,062 | −0.45% | −0.02 | −18.60% |
-| 10 trading days | 7,147 | 5.66% | 0.61 | −18.50% |
-| 20 trading days | 5,238 | 6.16% | 0.62 | −17.70% |
+| 3営業日 | 12,062 | −0.45% | −0.02 | −18.60% |
+| 10営業日 | 7,147 | +5.66% | 0.61 | −18.50% |
+| 20営業日 | 5,238 | +6.16% | 0.62 | −17.70% |
 
-These are total-capital return estimates, not market-neutral alpha. Market beta and exposure differences require separate analysis.
+上記は投下元本全体に対する成績であり、市場中立のアルファではありません。市場βやエクスポージャーの差は別途検証が必要です。
 
-### Phase 4 — Intraday price formation
-- Expanded minute observations and examined 5–120-minute windows.
-- Short-horizon continuation was present in selected samples but later entry materially reduced the edge.
-- Earnings-information features did not yield robust positive out-of-sample R-squared for minute-level continuation.
+### Phase 4｜分足による価格形成の検証
 
-### Phase 5 — Conditional and intraday strategies
-- Liquid TOPIX-universe positive initial-response intraday variant: **3,497 trades** over **494** trading days.
-- Recomputed reference: **0.82% annual return**, Sharpe **0.65**, maximum drawdown **−0.73%**.
-- Entry delay and higher transaction costs reduced or erased profitability.
-- Conditional industry/size/regime findings did not provide a robust broad-based selection rule after multiple-test controls.
+- 分足データへ拡張し、5〜120分程度の時間軸を検証。
+- 条件付きで短期の値動きの継続が見られたものの、エントリーを遅らせると優位性が低下。
+- 決算関連の特徴量によって、分足の継続リターンを安定的に説明できるとは確認できなかった。
 
-### Phase 6 — High-dimensional parameter search and ensembles
-- **14,909** first-pass candidates.
-- First-pass maximum Sharpe **1.55**; constrained reevaluation of top **20** candidates maximum **1.56**.
-- Historical selected-WF comparison (all previously researched dates):
+### Phase 5｜短期・条件付き戦略
 
-| Method | IS Sharpe | WF Sharpe | WF annual return | WF MDD | WF average utilization | WF fills |
+- 高流動性TOPIX対象銘柄の初動上昇後ロング：**3,497件の約定、494営業日**。
+- 固定条件再計算：年率収益**+0.82%**、Sharpe **0.65**、最大DD **−0.73%**。
+- エントリー遅延と売買コスト増加により収益性が縮小・消失。
+- 業種・時価総額・市場局面での分岐については、多重検定を考慮した安定的な選択ルールを十分に確認できなかった。
+
+### Phase 6｜高次元パラメータ探索とアンサンブル
+
+- 一次スクリーニング **14,909候補**。
+- 一次探索の最高Sharpe **1.55**、上位**20件**の制約付き再評価で最高**1.56**。
+- 既観測期間の選択型WF結果：
+
+| 方式 | IS Sharpe | WF Sharpe | WF年率 | WF最大DD | 平均稼働率 | WF約定 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Fixed | 0.62 | 0.80 | 7.10% | −8.41% | 56.15% | 1,146 |
-| Single | 1.56 | 2.07 | 1.93% | −0.48% | 2.09% | 58 |
-| Top-10 | 1.78 | 0.55 | 0.90% | −1.47% | 8.45% | 1,758 |
-| Neighbor | 1.54 | 1.95 | 1.39% | −0.26% | 1.59% | 63 |
-| Covariance shrinkage | 2.07 | 1.24 | 0.58% | −0.23% | 1.49% | 1,296 |
-| Dynamic monthly / 252d | — | 1.68 | 0.61% | −0.20% | 2.27% | 2,857 |
+| 固定（Fixed） | 0.62 | 0.80 | +7.10% | −8.41% | 56.15% | 1,146 |
+| 単独（Single） | 1.56 | **2.07** | +1.93% | −0.48% | 2.09% | 58 |
+| 上位10（Top-10） | 1.78 | 0.55 | +0.90% | −1.47% | 8.45% | 1,758 |
+| 近傍（Neighbor） | 1.54 | 1.95 | +1.39% | −0.26% | 1.59% | 63 |
+| 共分散縮小（Shrink） | 2.07 | 1.24 | +0.58% | −0.23% | 1.49% | 1,296 |
+| 月次動的配分（252日） | — | 1.68 | +0.61% | −0.20% | 2.27% | 2,857 |
 
-**Finding:** high Sharpe can coexist with economically small absolute return and sparse positions. A naive Top-K ensemble did not robustly improve results.
+**主な知見：** 高Sharpeでも、資金稼働率が極端に低ければ絶対収益が小さくなる。単純なTop-Kアンサンブルも、必ずしもWF成績を改善しない。
 
-### Phase 6.1 — Sizing, leverage and financing
-- **903 cases** finished successfully; local implementation reported committed as `20e7a27`.
-- Standard-cost, training-period-selected historical WF:
+### Phase 6.1｜資金配分・信用レバレッジ・調達費用
 
-| Method | WF Sharpe | Annual return | MDD | Mean utilization | Fills |
+- **903ケース**を正常完了。
+- ローカル実装はコミット `20e7a27` として保存済みとの報告。
+- 学習期間内だけで配分選択した、標準費用控除後の**既観測期間WF**：
+
+| 方式 | WF Sharpe | 年率収益 | 最大DD | 平均稼働率 | 約定 |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Single | **2.02** | 1.88% | −0.49% | 2.10% | 58 |
-| Neighbor | 1.91 | 1.35% | −0.26% | 1.60% | 63 |
-| Dynamic monthly / 252d | 1.60 | 0.62% | −0.20% | 2.21% | 2,857 |
-| Composite, shrinkage | 1.58 | **2.28%** | −0.71% | 2.63% | 2,895 |
-| Composite, equal | 1.57 | 2.06% | −0.65% | 2.49% | 2,895 |
+| Single | **2.02** | +1.88% | −0.49% | 2.10% | 58 |
+| Neighbor | 1.91 | +1.35% | −0.26% | 1.60% | 63 |
+| 月次動的配分（252日） | 1.60 | +0.62% | −0.20% | 2.21% | 2,857 |
+| 複合・共分散縮小 | 1.58 | **+2.28%** | −0.71% | 2.63% | 2,895 |
+| 複合・均等配分 | 1.57 | +2.06% | −0.65% | 2.49% | 2,895 |
 
-**Retrospectively inspected fixed-grid scenarios (not selection-valid WF):**
+**別評価：既観測期間を事後的に確認した固定グリッド条件**
 
-| Configuration | Sharpe | Annual return | MDD | Mean utilization |
+| 設定 | Sharpe | 年率収益 | 最大DD | 平均稼働率 |
 | --- | ---: | ---: | ---: | ---: |
-| Composite equal, 10× size / 5% utilization target | 2.42 | 4.94% | −0.99% | 10.55% |
-| Composite shrinkage, 10× size / 5% target | 2.42 | 5.18% | −0.99% | 10.72% |
-| Composite equal, 10× size / 10% target | 2.15 | 6.54% | −1.23% | 11.98% |
+| 複合均等・配分10倍・目標稼働率5% | **2.42** | +4.94% | −0.99% | 10.55% |
+| 複合Shrink・配分10倍・目標稼働率5% | **2.42** | +5.18% | −0.99% | 10.72% |
+| 複合均等・配分10倍・目標稼働率10% | 2.15 | **+6.54%** | −1.23% | 11.98% |
 
-These fixed-grid estimates span **334 trading days**. They reflect retrospective configuration inspection and must not be promoted as independent OOS results.
+固定グリッドは**334営業日**の評価であり、結果を見てから候補を抽出しているため、学習期間だけで選択したWFや独立OOSと同等には扱えません。
 
-Some configurations displayed identical results for nominal leverage caps from 1× to 3×, suggesting the caps were nonbinding in those instances or warranting an implementation audit. Position sizing, rather than credit leverage itself, appears to explain much of the performance increase in those examples.
+一部の設定では信用上限を1倍から3倍に変えても成績が変わらず、信用上限が非拘束だった可能性、または制約実装を確認する必要があります。この範囲では、信用倍率より銘柄別配分拡大が収益改善を説明していると考えられます。
 
-## Interpretation
+## 3. 現時点の結論
 
-**Established research outcomes:**
-- Post-earnings initial price reaction relates to conditional subsequent price paths in the studied sample.
-- A straightforward 20-day long rule achieved only **Sharpe 0.62**.
-- Selection and ensembles produced historical WF Sharpe around **1.6–2.0** for some configurations, often at very low invested-capital utilization.
-- Larger fixed-grid sizing produced promising historical return/Sharpe tradeoffs that require selection-valid follow-up.
+**確認できたこと**
 
-**Not established:**
-- Independence from previous researcher choices or a truly untouched OOS sample.
-- Executability at reported prices and volumes, including borrowing availability, margin rules and market impact.
-- Performance stability under larger real orders and financing costs.
-- Live realized alpha.
+- 決算直後の価格反応と、その後の条件付きリターンには検証可能な関係が見られる。
+- 単純な20営業日ロングのSharpeは**0.62**と高くない。
+- 最適化・アンサンブルによって、既観測期間WFで**1.6〜2.0程度**のSharpeを示す条件が見つかった。
+- 固定グリッドの資金配分拡大では、年率5%超・Sharpe 2超の候補も得られた。
 
-## Priority next steps
+**未確認のこと**
 
-1. Inspect retained trade-level and position-level records and verify nonbinding margin-cap cases.
-2. Audit concrete Japanese margin rules and broker-specific borrowing/maintenance requirements.
-3. Re-evaluate sizing and market-impact capacity without expanding the original 14,909-signal search.
-4. Freeze selection rules, then test on newly acquired **untouched** data and/or forward paper trading.
-5. Publish compact reproducible summaries, not licensed raw data or confidential records.
+- 研究過程で一切参照していない独立OOSでの再現性。
+- 実際の約定価格、注文容量、信用規制、調達条件を反映した運用可能性。
+- 売買規模拡大に伴うマーケットインパクト。
+- 実運用における超過収益。
 
-## Research operations and token efficiency
+## 4. 今後の優先課題
 
-- Use a local Python batch runner for grid search, ensembles and walk-forward experiments.
-- Preserve Parquet artifacts and resumable checkpoints locally.
-- Limit Codex to implementation, isolated tests, code review and concise result interpretation.
-- Do not stream large CSV/Parquet extracts or verbose logs into model context.
-- Respect the operator's rolling five-hour usage budget: at or below 25% remaining, avoid launching large Codex tasks; around 10%, checkpoint and stop. This requires operator verification rather than assuming a guaranteed usage API.
-- Preserve exact distinctions among IS, historical WF, retrospective fixed-grid evaluation and independent OOS.
+1. 保存済みの約定・日次建玉データを点検し、信用倍率の上限が働いていない条件を検証。
+2. 日本株の実際の信用保証金・維持率・銘柄別規制と証券会社固有の条件を反映。
+3. 元の14,909シグナル候補を再探索せず、既存候補の約定容量と市場インパクトを評価。
+4. 選択ルールを固定した後、新規取得データで**未観測OOS／フォワード・ペーパートレード**を実施。
+5. ライセンス対象の生データを公開せず、再現可能な集計値と検証方法を整備。
 
-## Publication boundaries
+## 5. 研究開発とCodex利用枠の管理
 
-The report documents research, not live performance, and is not a promise of future results. Validate software-license and market-data redistribution terms, ensure all private tokens/paths are removed, and review the commit history before making local source history publicly available.
+- グリッド探索、アンサンブル、WF計算は**ローカルPythonの独立バッチ**で実行。
+- Parquetとチェックポイントをローカルに保存し、中断・再開可能にする。
+- Codexは実装、小規模テスト、コードレビュー、結果解釈に使用。
+- 大量のCSV、Parquet、ログをそのままAIに読み込ませず、要約ファイルを参照。
+- 5時間利用枠の残量が25%以下なら大規模作業を開始せず、10%程度では作業を保存して終了する。残量は利用者が確認する。
+- IS、既観測WF、固定グリッド事後評価、独立OOS、実運用を明確に区分する。
+
+## 6. 公開範囲と免責
+
+本資料は研究段階の計算結果を説明するもので、実際の運用成績や将来収益を保証するものではありません。ソースコード公開前に、利用許諾、認証情報、個人情報、ローカルの絶対パス、非公開の勤務先情報、およびGit履歴全体を確認してください。
