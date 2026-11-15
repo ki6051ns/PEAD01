@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="268" viewBox="0 0 1400 268" role="img" aria-labelledby="title desc">
+<title id="title">PEAD01 研究の基本設計：経済的根拠から売買ルール・資金配分の最適化へ</title>
+<desc id="desc">左の広いボックスに「① 収益源泉を経済的に説明」。右向きの矢印。右の広いボックスに「② 売買ルール・資金配分の最適化」。短い説明を各ボックスに添える。</desc>
+<rect width="1400" height="268" fill="#ffffff"/>
+<rect x="18" y="22" width="635" height="216" rx="14" fill="#f2f5ff" stroke="#a3acd1" stroke-width="2"/>
+<rect x="746" y="22" width="635" height="216" rx="14" fill="#f0faf8" stroke="#91bcb6" stroke-width="2"/>
+<path d="M677 130 H724" stroke="#4c5565" stroke-width="5" stroke-linecap="round"/>
+<path d="M713 119 L727 130 L713 141" fill="none" stroke="#4c5565" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<g font-family="'Noto Sans JP','Yu Gothic','Hiragino Kaku Gothic ProN',sans-serif" fill="#1b2b44" text-anchor="middle">
+ <text x="335" y="91" font-size="30" font-weight="700">① 収益源泉を経済的に説明</text>
+ <text x="335" y="142" font-size="22">情報の織り込み遅れ・需給の偏り・投資家行動から</text>
+ <text x="335" y="176" font-size="22">αの経済的根拠を特定</text>
+ <text x="1063" y="91" font-size="30" font-weight="700">② 売買ルール・資金配分の最適化</text>
+ <text x="1063" y="142" font-size="22">エントリー・決済・保有期間・ポジション配分を</text>
+ <text x="1063" y="176" font-size="22">WF（逐次期間外評価）で検証</text>
+</g>
+</svg>
