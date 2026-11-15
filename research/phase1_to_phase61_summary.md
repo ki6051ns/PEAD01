@@ -151,3 +151,7 @@ Phase 6の全24方式は**同一334営業日のWF評価**。その中で、**Sin
 
 
 [Phase 6 アンサンブル方式別のWF採用パラメータ比較](phase6_ensemble_parameter_comparison.md)
+
+## 後続の研究
+
+- [Phase 7｜日足統一版のWF期間感応度と利益集中](phase7_summary.md)
