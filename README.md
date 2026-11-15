@@ -158,3 +158,5 @@ $env:OPENBLAS_NUM_THREADS = "1"
 [Phase 6 Top-10のWF採用パラメータと分布](reports/phase6_top10_wf_parameters.md)
 
 [Phase 6 アンサンブル方式別のWF採用パラメータ比較](reports/phase6_ensemble_parameter_comparison.md)
+
+[Phase 6の質疑で確認した仕様と未解決課題](research/phase6_qa_findings_and_open_issues_ja.md)
