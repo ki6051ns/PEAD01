@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 818 321" width="818" height="321">
+<rect width="818" height="321" rx="0" fill="#0e1728"/>
+<rect x="27.5" y="1" width="764" height="310" rx="15" fill="#111827" stroke="#263247" stroke-width="1.3"/>
+<rect x="40" y="13" width="742" height="44" rx="8" fill="#0c1424"/>
+<rect x="40" y="119" width="742" height="44" rx="8" fill="#0c1424"/>
+<rect x="41" y="226" width="740" height="73" rx="8" fill="none" stroke="#374256" stroke-width="2"/>
+<g font-family="Arial,'Noto Sans CJK JP','Noto Sans JP',sans-serif" text-anchor="middle">
+<text x="409" y="41" font-size="17" font-weight="700" fill="#f2f4f8">① 学習期間（126･252･504営業日など）</text>
+<text x="409" y="94" font-size="13.5" fill="#9da5b5">ブランク129営業日</text>
+<text x="409" y="148" font-size="17" font-weight="700" fill="#f2f4f8">② 内部検証期間（45営業日）</text>
+<text x="409" y="200" font-size="13.5" fill="#9da5b5">ブランク5営業日</text>
+<text x="409" y="259" font-size="17" font-weight="700" fill="#f2f4f8">③ WF評価期間（全体で334営業日）</text>
+<text x="409" y="283" font-size="13.5" fill="#aab2bf">選択済み戦略を適用し、実際のバックテスト損益を計測</text>
+</g>
+<g stroke="#8993a5" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M409 64v9m-4-4 4 4 4-4"/>
+<path d="M409 102v9m-4-4 4 4 4-4"/>
+<path d="M409 170v9m-4-4 4 4 4-4"/>
+<path d="M409 208v9m-4-4 4 4 4-4"/>
+</g></svg>
