@@ -1,0 +1,167 @@
+{
+  "archive_spans": {
+    "daily": [
+      "2016-11-01",
+      "2026-11-13"
+    ],
+    "master": [
+      "2016-11-01",
+      "2026-11-13"
+    ],
+    "topix": [
+      "2016-11-01",
+      "2026-11-13"
+    ],
+    "financials_months": [
+      "2016-11-01",
+      "2026-11-30"
+    ]
+  },
+  "requested_sessions": 2441,
+  "trimmed_sessions": 0,
+  "master_overlap": {
+    "shared_dates": 1230,
+    "new_only_dates": 0,
+    "old_only_dates": 0,
+    "matched": 5326537,
+    "new_only": 0,
+    "old_only": 0,
+    "changed": 0,
+    "changed_by_field": {
+      "Mkt": 0,
+      "ProdCat": 0,
+      "S33Nm": 0,
+      "Mrgn": 0
+    }
+  },
+  "master_rows": 10180576,
+  "financial_overlap": {
+    "shared_dates": 1235,
+    "new_only_dates": 0,
+    "old_only_dates": 0,
+    "matched": 97409,
+    "new_only": 7,
+    "old_only": 0,
+    "changed": 0,
+    "changed_by_field": {
+      "DiscTime": 0,
+      "DocType": 0,
+      "CurPerType": 0,
+      "CurPerSt": 0,
+      "CurPerEn": 0,
+      "CurFYEn": 0,
+      "NxtFYEn": 0,
+      "Sales": 0,
+      "OP": 0,
+      "EPS": 0,
+      "FOP": 0,
+      "FEPS": 0,
+      "FOP2Q": 0,
+      "FEPS2Q": 0,
+      "NxFOP": 0,
+      "NxFEPS": 0,
+      "NxFOP2Q": 0,
+      "NxFEPS2Q": 0,
+      "FNCOP": 0,
+      "FNCEPS": 0,
+      "FNCOP2Q": 0,
+      "FNCEPS2Q": 0,
+      "NxFNCOP": 0,
+      "NxFNCEPS": 0,
+      "NxFNCOP2Q": 0,
+      "NxFNCEPS2Q": 0
+    }
+  },
+  "disclosures": 192908,
+  "event_count": 158364,
+  "first_event": "2016-11-15",
+  "last_event": "2026-11-13",
+  "unknown_times": 0,
+  "repeat_period": 4919,
+  "multiple_statements": 2011,
+  "master_unmatched_events": 4359,
+  "phase2_overlap": {
+    "shared_dates": 1105,
+    "new_only_dates": 0,
+    "old_only_dates": 1,
+    "matched": 75360,
+    "new_only": 4,
+    "old_only": 9,
+    "changed": 0,
+    "changed_by_field": {
+      "announcement_datetime": 0,
+      "attributes_date": 0,
+      "security_code": 0,
+      "sector": 0
+    }
+  },
+  "eligible_events": 146734,
+  "loanable_events": 88784,
+  "yearly_events": {
+    "2016": 229,
+    "2017": 13904,
+    "2018": 14123,
+    "2019": 14319,
+    "2020": 14490,
+    "2021": 14664,
+    "2022": 14986,
+    "2023": 15169,
+    "2024": 15219,
+    "2025": 15147,
+    "2026": 14484
+  },
+  "daily_overlap": {
+    "shared_dates": 1230,
+    "new_only_dates": 0,
+    "old_only_dates": 0,
+    "matched": 5326537,
+    "new_only": 0,
+    "old_only": 0,
+    "changed": 0,
+    "changed_by_field": {
+      "O": 0,
+      "H": 0,
+      "L": 0,
+      "C": 0,
+      "Vo": 0,
+      "Va": 0,
+      "AdjFactor": 0,
+      "UL": 0,
+      "LL": 0
+    }
+  },
+  "topix_overlap": {
+    "shared_dates": 1230,
+    "new_only_dates": 0,
+    "old_only_dates": 0,
+    "matched": 1230,
+    "new_only": 0,
+    "old_only": 0,
+    "changed": 0,
+    "changed_by_field": {
+      "O": 0,
+      "C": 0
+    }
+  },
+  "daily_rows": 10146243,
+  "price_codes": 5392,
+  "bad_ohlc": 0,
+  "missing_volume": 357177,
+  "zero_volume": 0,
+  "invalid_factor": 0,
+  "adjustments": 2502,
+  "missing_bars_inside_code_span": 3433,
+  "codes_ending_before_last_session": 943,
+  "event_codes_without_prices": 0,
+  "first_session": "2016-11-15",
+  "last_session": "2026-11-13",
+  "sessions": 2441,
+  "signal_rows": 662070,
+  "signal_events": 115192,
+  "signals_by_method": {
+    "Close→Close": 102460,
+    "Close→Open": 102460,
+    "Open→Close": 228802,
+    "Open→Open": 228348
+  }
+}

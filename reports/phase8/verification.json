@@ -1,0 +1,29 @@
+{
+  "conditions": 36,
+  "strategies_per_condition": 21,
+  "workflow_sessions": 504,
+  "strict_label_boundaries": true,
+  "design_B_shortlist_invariant": true,
+  "cash_or_unit_allocation": true,
+  "exact_replays": [
+    [
+      0,
+      "A",
+      0,
+      "direct"
+    ],
+    [
+      0,
+      "A",
+      45,
+      "rerank"
+    ],
+    [
+      21,
+      "B",
+      756,
+      "screen"
+    ]
+  ],
+  "pytest_passed": 50
+}
