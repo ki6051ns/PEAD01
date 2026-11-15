@@ -1,0 +1,16 @@
+{
+  "holds": [1, 2, 3, 5, 10, 15, 20, 30, 40],
+  "windows": [126, 252, 504, 0],
+  "blanks": [0, 5, 10, 20, 40, 60],
+  "thresholds": [0, 0.03],
+  "directions": ["long", "short", "ls"],
+  "validation_days": 45,
+  "min_train_fills": 30,
+  "min_validation_fills": 8,
+  "top_k": 10,
+  "capital": 100000000,
+  "position_limit": 1000000,
+  "participation": 0.01,
+  "cost_bp": 20,
+  "last_session": "2026-11-13"
+}
