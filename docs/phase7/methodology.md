@@ -21,3 +21,17 @@ $env:OPENBLAS_NUM_THREADS = '1'
 - [利益集中と最大ドローダウン](../../figures/phase7/03_profit_concentration_and_drawdown.png)
 
 - [Phase 7の実装](../../src/pead01/phase7.py)
+
+## 全方式・全期間の追加統計
+
+[統合総括](../../research/phase7_summary.md)に、初動・保有期間、系列別、月・四半期・年、イベント集中の集計を収録した。[追加統計の実装](../../src/pead01/phase7_statistics.py)と[レポート生成](../../src/pead01/phase7_statistics_report.py)は、Phase 6の日足WF・採用履歴・価格経路を入力とする。候補選択をやり直さず、保存済みの資金台帳設定で全156方式の採用履歴を再生する。
+
+```powershell
+$env:PYTHONPATH = 'src'
+$env:OPENBLAS_NUM_THREADS = '1'
+.\.venv\Scripts\python.exe -m pead01.phase7_statistics_report
+```
+
+既定の入力は `data/phase6_daily_v4/`。入力のハッシュと再生後の集計キャッシュを `data/phase7_statistics/` に保存する。最初の実行は台帳再生を行い、同じ入力での再実行はキャッシュからCSV・図・Markdownを生成する。キャッシュはGitに含めない。整理済みの公開資料と別の場所へ書き出す場合は `--out`、`--research`、`--plots` を指定できる。
+
+出力する [集計CSV](../../reports/phase7/tables/) の収益・稼働率は小数。期間損益は日次収益率の複利、日次費用・方向別グロス列の合計は記述統計、初動・保有期間・イベントの純寄与は初期資本を分母とした加算可能な帰属である。月・四半期・年の複利再結合と8項目の日次照合を方式ごとに検査する。公開CSVの最細粒度は方式×期間または方式×パラメータ区分とし、個別取引は含めない。
