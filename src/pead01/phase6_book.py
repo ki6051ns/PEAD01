@@ -4,7 +4,7 @@ from collections import defaultdict
 import numpy as np
 
 
-def book(orders, days, config, cost_override=None, market=None, collect=True, contributions=None):
+def book(orders, days, config, cost_override=None, market=None, collect=True, contributions=None, journal=None):
     """Orders are (row, direction, weight). Net same-time orders before allocation."""
     groups = defaultdict(list)
     for row, side, weight in orders:
@@ -31,17 +31,27 @@ def book(orders, days, config, cost_override=None, market=None, collect=True, co
                 contributions[day, int(side < 0)] += size * side * (mark - prev) / nav
             if h:
                 daily[day, 0] += size * h * market[1 if offset else 0, day]
+            expense = 0.
             if side < 0 and row.frequency == "daily":
                 elapsed = (days[day] - days[day-1]).days if offset else 1
-                daily[day, 1] += size * prev * .01 * elapsed / 365
+                expense = size * prev * .01 * elapsed / 365
+                daily[day, 1] += expense
             daily[day, 4] += size * (mark + abs(h))
             if collect:
                 holdings.append((day, code, side, row.event_id, row.sector, size * mark))
             if close:
                 fee = (row.cost if cost_override is None else cost_override) / 20000
-                daily[day, 1] += fee * size * (mark + abs(h))
+                exit_fee = fee * size * (mark + abs(h))
+                expense += exit_fee
+                daily[day, 1] += exit_fee
                 daily[day, 2] += size * (mark + abs(h))
                 del active[code]
+            if journal is not None:
+                gross = size * side * (mark - prev)
+                if h:
+                    gross += size * h * market[1 if offset else 0, day]
+                journal(row, day, side, gross/nav, expense/nav, False)
+            if close:
                 return size * (mark + abs(h))
             return 0.
 
@@ -66,6 +76,8 @@ def book(orders, days, config, cost_override=None, market=None, collect=True, co
             daily[day, 1] += size * (1 + abs(h)) * fee
             daily[day, 2] += size * (1 + abs(h))
             daily[day, 3] += 1
+            if journal is not None:
+                journal(row, day, side, 0., size * (1 + abs(h)) * fee / nav, True)
         for code, item in list(active.items()):
             account(code, item, item[0].end == day and item[0].closed)
         daily[day, [0, 1, 2, 4]] /= nav

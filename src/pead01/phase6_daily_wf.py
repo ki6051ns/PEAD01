@@ -155,7 +155,7 @@ def evaluate(trades, sessions, cfg, folds, output, market):
 
 
 def replay(trades, catalogue, history, sessions, cfg, cost=None, capacity_scale=1.,
-           slippage=0., skip_rate=0., contributions=False):
+           slippage=0., skip_rate=0., contributions=False, journals=None):
     from collections import namedtuple
     import hashlib
     rowtype=namedtuple("Order","start end minute exit_minute code sector event_id capacity cost frequency "
@@ -193,7 +193,8 @@ def replay(trades, catalogue, history, sessions, cfg, cost=None, capacity_scale=
     for mode in sorted(set(history["mode"])-{"audit"}):
         sides=np.zeros((len(sessions),2))
         result,_=book(pairs.get(mode,[]),sessions,cfg,cost_override=cost,collect=False,
-                      contributions=sides if contributions else None)
+                      contributions=sides if contributions else None,
+                      journal=journals.get(mode) if journals is not None else None)
         daily=pd.DataFrame(result,columns=["gross","cost","turnover","fills","utilization","net"])
         if contributions:
             # Use identical shared-ledger fills and sizing, including cash/netting effects.
