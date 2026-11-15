@@ -1,0 +1,5 @@
+{"dataset": "calendar", "duplicate_keys_inside_files": 0, "dates_spanning_files": 0}
+{"dataset": "topix", "duplicate_keys_inside_files": 0, "dates_spanning_files": 0}
+{"dataset": "master", "duplicate_keys_inside_files": 0, "dates_spanning_files": 0}
+{"dataset": "daily", "duplicate_keys_inside_files": 0, "dates_spanning_files": 0}
+{"dataset": "financials", "duplicate_keys_inside_files": 0, "dates_spanning_files": 0}

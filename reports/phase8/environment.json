@@ -1,0 +1,8 @@
+{
+  "python": "3.8.10",
+  "numpy": "1.24.4",
+  "pandas": "2.0.3",
+  "pyarrow": "17.0.0",
+  "matplotlib": "3.7.5",
+  "openblas_num_threads": 1
+}

@@ -1,0 +1,16 @@
+{
+  "legacy_ledger_equal": true,
+  "legacy_selection_equal": true,
+  "phase8_expanding_daily_equal": true,
+  "candidates": 864,
+  "primary_conditions": 14,
+  "first_training_available": 1927,
+  "common_sessions": 504,
+  "legacy_calendar_changed_selection_folds": 0,
+  "market_rows_equal": 1230,
+  "legacy_signals": 124152,
+  "phase8_signals": 124152,
+  "matching_signal_keys": 124152,
+  "changed_matching_signals": 0,
+  "legacy_order_max_daily_net_difference": 1.0408340855860843e-17
+}

@@ -1,0 +1,9 @@
+{
+  "training_days": [252, 504, 756, 1008, 1260, 1512, 0],
+  "first_wf": "2024-10-18",
+  "last_wf": "2026-11-13",
+  "wf_sessions": 504,
+  "update_days": 63,
+  "blank": 10,
+  "legacy_validation_days": 45
+}
