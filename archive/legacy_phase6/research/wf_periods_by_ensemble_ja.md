@@ -92,4 +92,4 @@ Dynamicの学習窓×更新頻度ごとのWF Sharpe（同じ評価334営業日�
 - [Phase 6質疑の論点と残課題](phase6_qa_findings_and_open_issues_ja.md)
 - [Phase 6の方法](../docs/phase6_methodology.md)
 - [全方式WF集計](../reports/phase6_walkforward.md)
-- [実装](../src/pead01/phase6_report.py)
+- [実装](../../../src/pead01/phase6_report.py)

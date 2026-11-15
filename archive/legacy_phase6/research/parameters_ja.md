@@ -1,6 +1,6 @@
 # PEAD01｜探索パラメータの日本語解説
 
-Phase 6の探索条件とPhase 6.1の資金配分条件を、**「何を変えるのか」「値をどう読むのか」**の観点でまとめています。設定ファイルは [phase6.json](../phase6.json)、実装は [phase6_grid.py](../src/pead01/phase6_grid.py) と [phase61.py](../src/pead01/phase61.py) です。
+Phase 6の探索条件とPhase 6.1の資金配分条件を、**「何を変えるのか」「値をどう読むのか」**の観点でまとめています。設定ファイルは [phase6.json](../../../phase6.json)、実装は [phase6_grid.py](../../../src/pead01/phase6_grid.py) と [phase61.py](../../../src/pead01/phase61.py) です。
 
 ## Phase 6｜どの決算銘柄をいつ売買するか
 

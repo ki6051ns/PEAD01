@@ -111,10 +111,10 @@ flowchart TD
 
 ## 8. 実装・設定の参照先
 
-- [Phase 6の共通台帳](../src/pead01/phase6_book.py)
-- [Phase 6.1の信用・資本管理](../src/pead01/phase61.py)
-- [Phase 6の候補と売買条件](../src/pead01/phase6_grid.py)
+- [Phase 6の共通台帳](../../../src/pead01/phase6_book.py)
+- [Phase 6.1の信用・資本管理](../../../src/pead01/phase61.py)
+- [Phase 6の候補と売買条件](../../../src/pead01/phase6_grid.py)
 - [Phase 6.1の方法と費用仮定](../docs/phase61_methodology.md)
-- [探索パラメータの設定](../phase6.json)
+- [探索パラメータの設定](../../../phase6.json)
 
 公開ソースコードから読み取れるルールの説明であり、実取引の約定実績を意味しない。

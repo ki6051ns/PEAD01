@@ -1,7 +1,7 @@
 # Phase 6 アンサンブル方式別のWF採用パラメータ
 
 対象は2025年7月1日〜2026年11月13日の既観測WF。採用履歴と候補定義をIDで結合し、保存済み日次ポートフォリオ系列を集計した。
-SingleやTop-Kは条件の選択・配分方法。A・C・分足は個々の候補の初動計測方法。Aは最初の反応セッションの終値判定で次営業日寄り、Cは開示翌営業日寄り判定で翌々営業日寄り。I系は数字の分で判定する分足方式、P5系は5分判定後に末尾の分だけ遅延する方式。候補コードと条件の定義は[既存パラメータ資料](../research/parameters_ja.md)、Top-10の全枠は[個別レポート](phase6_top10_wf_parameters.md)を参照。
+SingleやTop-Kは条件の選択・配分方法。A・C・分足は個々の候補の初動計測方法。Aは最初の反応セッションの終値判定で次営業日寄り、Cは開示翌営業日寄り判定で翌々営業日寄り。I系は数字の分で判定する分足方式、P5系は5分判定後に末尾の分だけ遅延する方式。候補コードと条件の定義は[既存パラメータ資料](parameters_ja.md)、Top-10の全枠は[個別レポート](../reports/phase6_top10_wf_parameters.md)を参照。
 
 ![方式別の設定配分](../figures/phase6/04_ensemble_parameter_comparison.png)
 
@@ -2964,10 +2964,10 @@ SingleやTop-Kは条件の選択・配分方法。A・C・分足は個々の候�
 
 HHIは配分の二乗和、実効採用数は1/HHI。候補一覧はゼロ配分を含む。継続と累計種類数は正配分で計算。年率Sharpeの算出不能は —。
 
-- [W-FRI_126 の全更新・採用条件](phase6_ensemble_updates_W-FRI_126.md)
-- [W-FRI_252 の全更新・採用条件](phase6_ensemble_updates_W-FRI_252.md)
-- [W-FRI_504 の全更新・採用条件](phase6_ensemble_updates_W-FRI_504.md)
-- [W-FRI_0 の全更新・採用条件](phase6_ensemble_updates_W-FRI_0.md)
-- [M の全更新・採用条件](phase6_ensemble_updates_M.md)
-- [Q の全更新・採用条件](phase6_ensemble_updates_Q.md)
-- [quarterly の全更新・採用条件](phase6_ensemble_updates_quarterly.md)
+- [W-FRI_126 の全更新・採用条件](../reports/phase6_ensemble_updates_W-FRI_126.md)
+- [W-FRI_252 の全更新・採用条件](../reports/phase6_ensemble_updates_W-FRI_252.md)
+- [W-FRI_504 の全更新・採用条件](../reports/phase6_ensemble_updates_W-FRI_504.md)
+- [W-FRI_0 の全更新・採用条件](../reports/phase6_ensemble_updates_W-FRI_0.md)
+- [M の全更新・採用条件](../reports/phase6_ensemble_updates_M.md)
+- [Q の全更新・採用条件](../reports/phase6_ensemble_updates_Q.md)
+- [quarterly の全更新・採用条件](../reports/phase6_ensemble_updates_quarterly.md)

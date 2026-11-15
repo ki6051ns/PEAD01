@@ -2,14 +2,16 @@
 
 ## 再実行
 
+リポジトリ直下で、利用許諾のある日足入力とPhase 2イベントを用意して実行する。新規計算用の出力先は既存チェックポイントと分ける。
+
 ```powershell
 $env:PYTHONPATH = "src"
 $env:OPENBLAS_NUM_THREADS = "1"
-.venv/Scripts/python -m pead01.phase6_daily --output data/phase6_daily_v4
-.venv/Scripts/python -m pead01.phase6_validation_daily --output data/phase6_daily_v4
+.venv/Scripts/python -m pead01.phase6_daily --output data/phase6_daily_repro --reports data/repro_phase6/reports --research data/repro_phase6/research
+.venv/Scripts/python -m pead01.phase6_validation_daily --output data/phase6_daily_repro --reports data/repro_phase6/reports
 ```
 
-設定は `phase6_daily.json`、上記実行の出力は `data/phase6_daily_v4/`。`progress.json` と `status.json` に状態を保存する。経路（保有・出口）、選択、感応度別WFを保存し、同じ入力・コードで再実行すると完了済み段階を再利用する。停止はCtrl+Cまたは出力先に `pause` ファイルを作成（次のチェックポイントで停止）。再開時はそのファイルを除く。変更後の再計算は別の `--output` を指定。旧Phase 6の設定と出力に依存しない。
+設定は [phase6_daily.json](../../phase6_daily.json)、実装は [phase6_daily.py](../../src/pead01/phase6_daily.py) と [phase6_validation_daily.py](../../src/pead01/phase6_validation_daily.py)、上記実行の計算出力は `data/phase6_daily_repro/`、生成Markdownは `data/repro_phase6/`。公開用の整理済み資料は下記のレポートを参照。既存の `data/phase6_daily_v4/` を直接再開する場合は、記録したソースと入力パスが一致する当時の作業場所（ローカル `58343a5`、公開コードの対応コミット `9d94f33`）を使用する。`progress.json` と `status.json` に状態を保存する。経路（保有・出口）、選択、感応度別WFを保存し、同じ入力・コードで再実行すると完了済み段階を再利用する。停止はCtrl+Cまたは出力先に `pause` ファイルを作成（次のチェックポイントで停止）。再開時はそのファイルを除く。変更後の再計算は別の `--output` を指定。旧Phase 6の設定と出力に依存しない。
 
 ## 経済仮説と観測
 
@@ -27,4 +29,4 @@ $env:OPENBLAS_NUM_THREADS = "1"
 
 感応度は片道10bpの価格悪化、往復40bp、ADV容量25%化、イベントIDで決定的に20%の注文を落とす4仮定。最高値は全方式を見た探索比較。独立OOSは未観測。入力の収録期間中に存在する市場環境や上場廃止の影響は残る。
 
-[基礎集計と感応度](../reports/phase6_daily_rebuild.md)、[実データの品質検査と選択バイアス](../reports/phase6_daily_validation.md)
+[基礎集計と感応度](../../reports/phase6_daily/phase6_daily_rebuild.md)、[実データの品質検査と選択バイアス](../../reports/phase6_daily/phase6_daily_validation.md)

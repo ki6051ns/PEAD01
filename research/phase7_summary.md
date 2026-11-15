@@ -6,6 +6,9 @@ Phase 6 日足統一版（58343a5）の864候補を再利用。Neighborの全期
 
 多重比較調整後のp値は10日 0.215、40日 0.557。最高方式の指定は事後比較。実際の期初採用は学習・内部検証の情報で決定。独立OOSは未実施。
 
-- [評価窓の感応度](../reports/phase7_wf_window_robustness.md)
-- [2025Q2の利益分解](../reports/phase7_profit_concentration.md)
-- [採用パラメータの持続性](../reports/phase7_parameter_persistence.md)
+- [評価窓の感応度](../reports/phase7/phase7_wf_window_robustness.md)
+- [2025Q2の利益分解](../reports/phase7/phase7_profit_concentration.md)
+- [採用パラメータの持続性](../reports/phase7/phase7_parameter_persistence.md)
+- [方法・実装・再現と図表](../docs/phase7/methodology.md)
+- [基準となるPhase 6日足統一版](phase6_daily_rebuild_summary.md)
+- [研究全体の索引](README.md)

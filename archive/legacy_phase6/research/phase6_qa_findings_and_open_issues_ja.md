@@ -10,7 +10,7 @@
 
 ## 2. 候補を選ぶまでのWF手順
 
-公開実装 [`phase6_report.py`](../src/pead01/phase6_report.py) による。
+公開実装 [`phase6_report.py`](../../../src/pead01/phase6_report.py) による。
 
 1. WF更新日を基準に**学習**範囲を定め、学習Sharpeで上位50候補を選択する。
 2. 学習と分離した**直近45営業日の内部検証**で、上位50候補をSharpeで再順位付けする。
@@ -110,5 +110,5 @@ val_end   = start - 5           # WF開始前の5営業日を空ける
 - [Phase 6の方法](../docs/phase6_methodology.md)
 - [Phase 6全方式のWF成績](../reports/phase6_walkforward.md)
 - [採用パラメータの方式間比較](../reports/phase6_ensemble_parameter_comparison.md)
-- [元の設定ファイル](../phase6.json)
-- [選択・配分の実装](../src/pead01/phase6_report.py)
+- [元の設定ファイル](../../../phase6.json)
+- [選択・配分の実装](../../../src/pead01/phase6_report.py)
