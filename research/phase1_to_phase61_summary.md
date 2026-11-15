@@ -133,4 +133,6 @@
 
 [Phase 6 Top-10のWF採用パラメータと分布](../reports/phase6_top10_wf_parameters.md)
 
+[Phase 6質疑の要点・WFブランクと今後の検証課題](phase6_qa_findings_and_open_issues_ja.md)
+
 [Phase 6 アンサンブル方式別のWF採用パラメータ比較](../reports/phase6_ensemble_parameter_comparison.md)
