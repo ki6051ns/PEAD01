@@ -23,10 +23,13 @@ Phase 6の観測最高値は成績比較後に特定した値。各WF期の選�
 - [Phase 7の方法・再現と図表](../docs/phase7/methodology.md)
 - [旧Phase 6・6.1の資料と図の由来](../archive/legacy_phase6/README.md)
 
-## Phase 7〜9の成果物
+## Phase 7〜12の成果物
 
 | Phase | 研究総括 | WFパフォーマンス | ヒートマップ | 再現手順 |
 | --- | --- | --- | --- | --- |
 | 7 | [研究総括](phase7_summary.md) | [方式別成績](../reports/phase7/tables/03_ensemble_modes.csv) | [ブランク別成績・日次相関](../figures/phase7/02_blank_surface_and_correlation.png) | [方法と再現](../docs/phase7/methodology.md) |
 | 8 | [研究総括](phase8_summary.md) | [方式別成績](../reports/phase8/performance.csv) | [検証期間別Sharpe](../reports/phase8/06_sharpe_heatmap.png) | [集計と再現](../reports/phase8/README.md) |
 | 9 | [研究総括](phase9_summary.md) | [学習期間別成績](../reports/phase9/performance.csv) | [学習期間別Sharpe](../reports/phase9/01_sharpe_heatmap.png) | [集計と再現](../reports/phase9/README.md) |
+| 10 | [長期WF総括（Phase 9内追記）](phase9_summary.md#phase-10結果の追記長期wf2026-11-15時点) | 共通861営業日・更新オフセット別成績 | — | 公開詳細レポート未確認 |
+| 11 | [入口ボラ・取引別分析（Phase 9内追記）](phase9_summary.md#phase-11結果の追記入口topixボラと取引収益性) | 高ボラ／低ボラ、Long／Short別実現損益 | — | 公開詳細レポート未確認 |
+| 12・追加 | [制約付きWF・高ボラLong（Phase 9内追記）](phase9_summary.md#phase-12および追加検証高ボラlongのwf成績研究区切り) | B・高ボラLongの861日Sharpe 1.08／0.90 | — | 公開詳細レポート未確認 |
