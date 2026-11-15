@@ -132,3 +132,5 @@
 本資料は研究段階の計算結果を説明するもので、実際の運用成績や将来収益を保証するものではありません。ソースコード公開前に、利用許諾、認証情報、個人情報、ローカルの絶対パス、非公開の勤務先情報、およびGit履歴全体を確認してください。
 
 [Phase 6 Top-10のWF採用パラメータと分布](../reports/phase6_top10_wf_parameters.md)
+
+[Phase 6 アンサンブル方式別のWF採用パラメータ比較](../reports/phase6_ensemble_parameter_comparison.md)

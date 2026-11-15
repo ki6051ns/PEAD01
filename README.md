@@ -156,3 +156,5 @@ $env:OPENBLAS_NUM_THREADS = "1"
 停止は `New-Item data/phase6_v6/phase6.pause -ItemType File -Force`。停止を確認後に `Remove-Item -LiteralPath data/phase6_v6/phase6.pause` を実行して再起動する。進捗は `data/phase6_v6/phase6_progress.json`、詳細は同ディレクトリの `logs/`。メモリ設定は探索並列数を抑える目安で、OSによる強制上限は設定しない。[計算方法](docs/phase6_methodology.md)
 
 [Phase 6 Top-10のWF採用パラメータと分布](reports/phase6_top10_wf_parameters.md)
+
+[Phase 6 アンサンブル方式別のWF採用パラメータ比較](reports/phase6_ensemble_parameter_comparison.md)
