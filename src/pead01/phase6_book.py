@@ -4,7 +4,7 @@ from collections import defaultdict
 import numpy as np
 
 
-def book(orders, days, config, cost_override=None, market=None, collect=True):
+def book(orders, days, config, cost_override=None, market=None, collect=True, contributions=None):
     """Orders are (row, direction, weight). Net same-time orders before allocation."""
     groups = defaultdict(list)
     for row, side, weight in orders:
@@ -27,6 +27,8 @@ def book(orders, days, config, cost_override=None, market=None, collect=True):
             prev = marks[offset-1] if offset else 1.
             mark = marks[offset]
             daily[day, 0] += size * side * (mark - prev)
+            if contributions is not None:
+                contributions[day, int(side < 0)] += size * side * (mark - prev) / nav
             if h:
                 daily[day, 0] += size * h * market[1 if offset else 0, day]
             if side < 0 and row.frequency == "daily":
