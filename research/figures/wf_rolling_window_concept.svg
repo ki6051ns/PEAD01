@@ -1,1 +1,51 @@
-<svg font-family="-apple-system-body, ui-sans-serif, -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, &quot;Apple Color Emoji&quot;, Arial, sans-serif, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;" font-weight="400" data-d-component="svg" fill="currentColor" style="color:rgb(36, 41, 47)" viewBox="0 0 340 133" width="100%" xmlns="http://www.w3.org/2000/svg"><text x="5" y="25" font-size="11" fill="currentColor">第1回</text><rect x="43" y="9" width="164" height="25" rx="3" fill="#6996C5" opacity=".82"/><rect x="207" y="9" width="47" height="25" rx="3" fill="#36A587" opacity=".92"/><text x="125" y="26" font-size="11" fill="#FFFFFF" text-anchor="middle">学習</text><text x="230.5" y="26" font-size="10" fill="#FFFFFF" text-anchor="middle">検証</text><text x="5" y="63" font-size="11" fill="currentColor">第2回</text><rect x="83" y="47" width="164" height="25" rx="3" fill="#6996C5" opacity=".82"/><rect x="247" y="47" width="47" height="25" rx="3" fill="#36A587" opacity=".92"/><text x="165" y="64" font-size="11" fill="#FFFFFF" text-anchor="middle">学習</text><text x="270.5" y="64" font-size="10" fill="#FFFFFF" text-anchor="middle">検証</text><text x="5" y="101" font-size="11" fill="currentColor">第3回</text><rect x="123" y="85" width="164" height="25" rx="3" fill="#6996C5" opacity=".82"/><rect x="287" y="85" width="47" height="25" rx="3" fill="#36A587" opacity=".92"/><text x="205" y="102" font-size="11" fill="#FFFFFF" text-anchor="middle">学習</text><text x="310.5" y="102" font-size="10" fill="#FFFFFF" text-anchor="middle">検証</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 385" width="960" height="385" role="img" aria-labelledby="t d">
+<title id="t">PEAD01：更新ごとに移動する学習・内部検証と固定されたWF評価期間</title>
+<desc id="d">学習・129営業日のブランク・45営業日の内部検証・5営業日のブランクは各更新日に合わせて移動する。一方、成績集計に使う2025年7月1日から2026年11月13日までの共通WF評価期間334営業日は固定され、その内側で採用ルールを週次・月次・四半期に更新する。位置や幅は模式的なもの。</desc>
+<rect width="960" height="385" rx="12" fill="#ffffff"/>
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",Meiryo,Arial,sans-serif}
+.header{font-size:19px;font-weight:700;fill:#243347}
+.sub{font-size:12px;fill:#536277}
+.row{font-size:14px;font-weight:650;fill:#243347}
+.block{font-size:13px;font-weight:650;fill:#ffffff}
+.small{font-size:12px;fill:#536277}
+</style>
+<text x="32" y="35" class="header">WFの評価期間は固定、学習・内部検証は更新ごとに移動</text>
+<text x="32" y="59" class="sub">各更新の直前に候補と配分を決め、その結果を共通の評価期間内で積み上げる（模式図・時間幅は非比例）</text>
+<g transform="translate(0,3)">
+<text x="33" y="107" class="row">更新①</text>
+<rect x="119" y="88" width="187" height="32" rx="5" fill="#377cb4"/><text x="212.5" y="109" class="block" text-anchor="middle">学習</text>
+<rect x="307" y="88" width="91" height="32" rx="4" fill="#e5e9ef"/><text x="352.5" y="108" class="small" text-anchor="middle">129日</text>
+<rect x="400" y="88" width="86" height="32" rx="5" fill="#27977b"/><text x="443" y="108" class="block" text-anchor="middle">検証45日</text>
+<rect x="488" y="88" width="31" height="32" rx="3" fill="#e5e9ef"/><text x="503.5" y="108" font-size="10" fill="#536277" text-anchor="middle">5日</text>
+<path d="M520 104 H558" stroke="#66788c" stroke-width="2"/><path d="M553 99 L558 104 L553 109" stroke="#66788c" stroke-width="2" fill="none"/>
+<rect x="558" y="88" width="106" height="32" rx="5" fill="#a97537"/><text x="611" y="109" class="block" text-anchor="middle">運用①</text>
+<text x="33" y="156" class="row">更新②</text>
+<rect x="178" y="137" width="187" height="32" rx="5" fill="#377cb4"/><text x="271.5" y="158" class="block" text-anchor="middle">学習</text>
+<rect x="366" y="137" width="91" height="32" rx="4" fill="#e5e9ef"/><text x="411.5" y="157" class="small" text-anchor="middle">129日</text>
+<rect x="459" y="137" width="86" height="32" rx="5" fill="#27977b"/><text x="502" y="157" class="block" text-anchor="middle">検証45日</text>
+<rect x="547" y="137" width="31" height="32" rx="3" fill="#e5e9ef"/><text x="562.5" y="157" font-size="10" fill="#536277" text-anchor="middle">5日</text>
+<path d="M579 153 H617" stroke="#66788c" stroke-width="2"/><path d="M612 148 L617 153 L612 158" stroke="#66788c" stroke-width="2" fill="none"/>
+<rect x="617" y="137" width="106" height="32" rx="5" fill="#a97537"/><text x="670" y="158" class="block" text-anchor="middle">運用②</text>
+<text x="33" y="205" class="row">更新③</text>
+<rect x="237" y="186" width="187" height="32" rx="5" fill="#377cb4"/><text x="330.5" y="207" class="block" text-anchor="middle">学習</text>
+<rect x="425" y="186" width="91" height="32" rx="4" fill="#e5e9ef"/><text x="470.5" y="206" class="small" text-anchor="middle">129日</text>
+<rect x="518" y="186" width="86" height="32" rx="5" fill="#27977b"/><text x="561" y="206" class="block" text-anchor="middle">検証45日</text>
+<rect x="606" y="186" width="31" height="32" rx="3" fill="#e5e9ef"/><text x="621.5" y="206" font-size="10" fill="#536277" text-anchor="middle">5日</text>
+<path d="M638 202 H676" stroke="#66788c" stroke-width="2"/><path d="M671 197 L676 202 L671 207" stroke="#66788c" stroke-width="2" fill="none"/>
+<rect x="676" y="186" width="106" height="32" rx="5" fill="#a97537"/><text x="729" y="207" class="block" text-anchor="middle">運用③</text>
+</g>
+<path d="M33 252 H927" stroke="#dde2e8" stroke-width="1"/>
+<text x="33" y="280" class="row">成績の集計</text>
+<text x="475" y="273" font-size="13" font-weight="700" fill="#38628b" text-anchor="middle">全方式で同じ期間・同じ日付</text>
+<rect x="128" y="285" width="791" height="55" rx="7" fill="#e7f1fb" stroke="#377cb4" stroke-width="2"/>
+<rect x="132" y="288" width="259" height="49" rx="4" fill="#c7ddf1"/>
+<rect x="395" y="288" width="259" height="49" fill="#d8e7f5"/>
+<rect x="658" y="288" width="257" height="49" rx="4" fill="#c7ddf1"/>
+<path d="M393 287 V337 M656 287 V337" stroke="#ffffff" stroke-width="3"/>
+<text x="262" y="309" font-size="13" font-weight="650" fill="#244c70" text-anchor="middle">更新①の運用結果</text>
+<text x="525" y="309" font-size="13" font-weight="650" fill="#244c70" text-anchor="middle">更新②の運用結果</text>
+<text x="786" y="309" font-size="13" font-weight="650" fill="#244c70" text-anchor="middle">更新③以降の運用結果</text>
+<text x="523" y="331" font-size="13" font-weight="700" fill="#244c70" text-anchor="middle">共通WF評価期間：334営業日（2025/7/1〜2026/11/13）</text>
+<text x="129" y="360" font-size="12" fill="#536277">※ 下段の区切り幅は例示。実際の更新頻度は週次・月次・四半期で異なる。</text>
+</svg>
